@@ -1,10 +1,8 @@
-//Settings
-export const SET_TOGGLE = "SET_TOGGLE";
-export const SAVE_SETTINGS = "SAVE_SETTINGS";
-export const RESET_SETTINGS = "RESET_SETTINGS";
-
-//Messages
-export const ADD_MS = "ADD_MS";
+//Show
+export const ADD_SHOW = "ADD_SHOW";
+export const ADD_EPISODE = "ADD_EPISODE";
+export const LOADING_SHOW = "LOADING_SHOW";
+export const LOADING_EPISODE = "LOADING_EPISODE";
 
 //Errors
 export const ADD_ERROR = "ADD_ERROR";

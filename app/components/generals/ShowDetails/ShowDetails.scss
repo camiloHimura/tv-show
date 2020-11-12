@@ -1,0 +1,11 @@
+.ShowDetails {
+  display: flex;
+
+  .contImg {
+    flex-basis: 1;
+  }
+
+  .contDetails {
+    flex-basis: 2;
+  }
+}

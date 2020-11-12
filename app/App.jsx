@@ -2,22 +2,20 @@ import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
-import Nav from "./components/Nav";
 import Loader from "./components/generals/Loader";
 
-const Home = React.lazy(() => import("./components/Home"));
-const Details = React.lazy(() => import("./components/Details"));
+const Home = React.lazy(() => import("./components/pages/Home"));
+const Details = React.lazy(() => import("./components/pages/Details"));
 
 function App() {
   return (
     <div className="MyChat">
       <Router>
-        <Nav name="My Chat" />
         <div className="container">
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<Loader isVisible={true} />}>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/details" component={Details} />
+              <Route path="/details/:id" component={Details} />
             </Switch>
           </Suspense>
         </div>

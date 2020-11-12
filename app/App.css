@@ -108,15 +108,9 @@ button {
 }
 
 .container {
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
   width: var(--container-width);
-  justify-content: space-between;
   border-radius: var(--container-radius);
-  max-height: var(--container-max-height);
-  margin-top: calc(var(--container-margin) / 2);
-  height: calc(100vh - var(--container-margin));
+  margin: var(--container-margin) 0px var(--container-margin) 0px;
 }
 
 .title {
@@ -138,7 +132,7 @@ button {
     --gPadding: 20px;
     --nav-height: 60px;
     --container-width: 90vw;
-    --container-margin: 10vh;
+    --container-margin: 20px;
     --modal-container-width: 60%;
     --container-radius: 6px;
     --card-width: 60%;

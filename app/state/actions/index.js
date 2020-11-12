@@ -1,25 +1,51 @@
 import {
-  RESET_SETTINGS,
-  SET_TOGGLE,
-  SAVE_SETTINGS,
-  ADD_MS,
+  ADD_SHOW,
+  ADD_EPISODE,
+  LOADING_EPISODE,
+  LOADING_SHOW,
 } from "./actions-types";
+import { searchShow, searchEpisode } from "../../utils/ServerRequest";
 
-//Setting
-
-export function saveSettings(payload) {
-  return { type: SAVE_SETTINGS, payload };
+export function addShow(payload) {
+  return { type: ADD_SHOW, payload };
 }
 
-export function resetSettings(payload) {
-  return { type: RESET_SETTINGS, payload };
+export function addEpisode(payload) {
+  return { type: ADD_EPISODE, payload };
 }
 
-export function toggleSettings(payload) {
-  return { type: SET_TOGGLE, payload };
+export function updateLoadingShow(payload) {
+  return { type: LOADING_SHOW, payload };
 }
 
-//Message
-export function addMessage(payload) {
-  return { type: ADD_MS, payload };
+export function updateLoadingEposide(payload) {
+  return { type: LOADING_EPISODE, payload };
+}
+
+export function getShow(name) {
+  return async function (dispatch) {
+    try {
+      dispatch(updateLoadingShow(true));
+      let show = await searchShow(name);
+      dispatch(addShow(show));
+    } catch (error) {
+      dispatch(addErrorAction({ ...error }));
+    } finally {
+      dispatch(updateLoadingShow(false));
+    }
+  };
+}
+
+export function getEpisode(id) {
+  return async function (dispatch) {
+    try {
+      dispatch(updateLoadingEposide(true));
+      let episode = await searchEpisode(id);
+      dispatch(addEpisode(episode));
+    } catch (error) {
+      dispatch(addErrorAction({ ...error }));
+    } finally {
+      dispatch(updateLoadingEposide(false));
+    }
+  };
 }

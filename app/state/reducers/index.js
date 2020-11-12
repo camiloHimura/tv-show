@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import messages from "./messagesReducer";
+import show from "./showReducer";
 
 export default combineReducers({
-  messages,
+  show,
 });

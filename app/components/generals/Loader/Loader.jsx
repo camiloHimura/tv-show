@@ -16,6 +16,6 @@ function Loader({ isVisible = false, className = "" }) {
   );
 }
 
-Loader.propTypes = {};
+Loader.propTypes = { isVisible: PropTypes.bool };
 
 export default Loader;
