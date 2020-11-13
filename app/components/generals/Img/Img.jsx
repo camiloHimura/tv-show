@@ -9,17 +9,27 @@ function Img(props) {
   const [imgWidth, setImgWidth] = React.useState("auto");
 
   React.useEffect(() => {
+    let isUnmounted = false;
+    setIsLoaded(false);
     let iImage = new Image();
     iImage.src = props.src;
     iImage.onload = () => {
+      if (isUnmounted) {
+        return;
+      }
       setIsLoaded(true);
       setImgWidth(iImage.naturalWidth);
       setAspectRatio(`${(iImage.naturalHeight / iImage.naturalWidth) * 100}%`);
     };
+
+    return () => (isUnmounted = true);
   }, []);
 
   return (
-    <div className="contImg" style={{ width: imgWidth }}>
+    <div
+      className="containerImg"
+      style={{ paddingBottom: aspectRatio, width: imgWidth }}
+    >
       <Loader data-test="loader" isVisible={!isLoaded} className="loader" />
       <img
         data-test="img"

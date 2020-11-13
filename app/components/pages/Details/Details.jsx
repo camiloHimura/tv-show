@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { getEpisode } from "../../../state/actions";
+import ShowDetails from "../../generals/ShowDetails";
 import "./Details.scss";
 
 import Loader from "../../generals/Loader";
@@ -18,7 +19,7 @@ const mapDispachToProps = (dispatch) => ({
 
 export function Details({ getEpisode, episode, loadingEpisode }) {
   let { id } = useParams();
-  const { name, season, number, summary } = episode;
+  const { name, season, number, summary, image } = episode;
 
   React.useEffect(() => {
     getEpisode(id);
@@ -27,13 +28,17 @@ export function Details({ getEpisode, episode, loadingEpisode }) {
   return (
     <div className="Details">
       <Link data-test="link-home" to="/">
-        Back
+        &#8592; Back
       </Link>
-      <Loader isVisible={loadingEpisode} />
-      <p data-test="name">{name}</p>
-      <p data-test="season">{season}</p>
-      <p data-test="number">{number}</p>
-      <div data-test="summary" dangerouslySetInnerHTML={{ __html: summary }} />
+      <Loader data-test="loader" isVisible={loadingEpisode} />
+      {!loadingEpisode && name && (
+        <ShowDetails
+          name={`${season} - ${number}: ${name}`}
+          image={image}
+          summary={summary}
+          data-test="details"
+        />
+      )}
     </div>
   );
 }

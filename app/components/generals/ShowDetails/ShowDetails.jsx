@@ -13,7 +13,9 @@ export default function ShowDetails({ image, name, summary }) {
         <div
           data-test="summary"
           className="summary"
-          dangerouslySetInnerHTML={{ __html: summary }}
+          dangerouslySetInnerHTML={{
+            __html: summary || "<p>No description available</p>",
+          }}
         />
       </div>
       <div className="contImg">
@@ -25,7 +27,7 @@ export default function ShowDetails({ image, name, summary }) {
 
 ShowDetails.propTypes = {
   name: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
+  summary: PropTypes.string,
   image: PropTypes.shape({
     medium: PropTypes.string,
     original: PropTypes.string,

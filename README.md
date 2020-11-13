@@ -10,7 +10,7 @@ node version 12 or greater.
 
 Run develop mode.
 
-Uses webpack-dev-server to build and serve the app (hot reload it's available), it opens automatically on the browser. <br>[.env.dev](https://github.com/camiloHimura/chat-app/blob/master/.env.dev) config environment variables.
+Uses webpack-dev-server to build and serve the app (hot reload it's available), it opens automatically on the browser. <br>[.env.dev](https://github.com/camiloHimura/tv-show/blob/master/.env.dev) config environment variables (committed for demonstration purpose).
 
 ### `npm run build`
 
