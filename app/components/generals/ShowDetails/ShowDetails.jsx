@@ -6,15 +6,18 @@ import "./ShowDetails.scss";
 export default function ShowDetails({ image, name, summary }) {
   return (
     <div className="ShowDetails">
-      <div className="contImg">
-        <Img data-test="image" src={image.medium} />
-      </div>
       <div className="contDetails">
-        <p data-test="name">{name}</p>
+        <h2 className="title" data-test="name">
+          {name}
+        </h2>
         <div
           data-test="summary"
+          className="summary"
           dangerouslySetInnerHTML={{ __html: summary }}
         />
+      </div>
+      <div className="contImg">
+        <Img data-test="image" src={image.medium} />
       </div>
     </div>
   );

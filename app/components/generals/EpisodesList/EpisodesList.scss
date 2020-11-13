@@ -1,3 +1,24 @@
 .EpisodesList {
-  margin-top: var(--gPadding);
+  h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--blue);
+  }
+  & > div {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+
+    &:active {
+      color: var(--blue-3);
+    }
+    &:visited {
+      color: var(--blue-4);
+    }
+  }
 }

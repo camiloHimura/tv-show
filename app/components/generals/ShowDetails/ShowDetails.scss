@@ -1,11 +1,31 @@
 .ShowDetails {
   display: flex;
+  align-items: center;
+  flex-direction: column;
 
   .contImg {
-    flex-basis: 1;
+    flex-basis: 20%;
+    max-width: 210px;
+    margin: 10px 0 10px 0;
   }
 
   .contDetails {
-    flex-basis: 2;
+    padding: 10px;
+    flex-basis: 80%;
+
+    .summary {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    & {
+      flex-direction: row;
+      align-items: initial;
+
+      .contImg {
+        margin: 0;
+      }
+    }
   }
 }

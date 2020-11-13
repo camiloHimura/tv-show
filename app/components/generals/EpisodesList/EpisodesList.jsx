@@ -6,10 +6,13 @@ import "./EpisodesList.scss";
 export default function EpisodesList({ list = [] }) {
   return (
     <div className="EpisodesList">
-      {list.map((data) => (
+      {list.map((data, index) => (
         <div key={data.id}>
+          {data.season !== list[index - 1]?.season && (
+            <h3>Season {data.season}</h3>
+          )}
           <Link data-test="link-episode" to={`details/${data.id}`}>
-            {data.season}: {data.number} - {data.name}
+            {data.number} - {data.name}
           </Link>
         </div>
       ))}

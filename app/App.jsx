@@ -9,7 +9,7 @@ const Details = React.lazy(() => import("./components/pages/Details"));
 
 function App() {
   return (
-    <div className="MyChat">
+    <div className="TvShow">
       <Router>
         <div className="container">
           <Suspense fallback={<Loader isVisible={true} />}>

@@ -1,9 +1,7 @@
 :root {
   --black: #262626;
   --white: #fff;
-  --red: #ed5355;
   --gray: #858585;
-  --orange: #ee8d38;
 
   --blue-4: #0487d9;
   --blue-3: #0477bf;
@@ -16,15 +14,13 @@
   /* --light-gray-4 : #a5a3a3; */
   --white-6: hsla(0, 0%, 100%, 0.6);
 
-  --nav-height: 40px;
-  --button-radius: 10px;
   --paragraph-color: #4a4a4a;
   --color-border: var(--light-gray);
   /* General container */
   --gPadding: 10px;
   --input-radius: 14px;
   --container-radius: 0px;
-  --container-width: 100vw;
+  --container-width: 96vw;
   --container-margin: 0vh;
   --paragraph-margin: 10px;
   --container-max-height: 100%;
@@ -36,81 +32,25 @@
 
 body,
 html,
-.MyChat {
+.TvShow {
   height: 100%;
 }
 
-.MyChat {
-  display: flex;
-  font-size: 18px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.TvShow {
 }
 
 h1,
 h2 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-input {
-  outline: none;
+p {
+  color: var(--paragraph-color);
 }
-
-.--flex {
-  display: flex;
-}
-
-.--wrap {
-  flex-wrap: wrap;
-}
-
-.--flexBetween {
-  justify-content: space-between;
-}
-
-.--flexCenter {
-  justify-content: center;
-}
-
-.--flexEnd {
-  justify-content: flex-end;
-}
-
-.--flexColumn {
-  flex-direction: column;
-}
-
-.--spaceEvenly {
-  justify-content: space-evenly;
-}
-
-.--marginBottom {
-  margin-bottom: var(--paragraph-margin);
-}
-
-.--marginRight {
-  margin-right: var(--paragraph-margin);
-}
-
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.invalid {
-  border: 1px solid var(--red);
-}
-
-.--pointer {
-  cursor: pointer;
-}
-
 .container {
   width: var(--container-width);
   border-radius: var(--container-radius);
-  margin: var(--container-margin) 0px var(--container-margin) 0px;
+  margin: var(--container-margin) auto var(--container-margin) auto;
 }
 
 .title {

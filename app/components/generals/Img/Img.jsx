@@ -19,10 +19,7 @@ function Img(props) {
   }, []);
 
   return (
-    <div
-      className="contImg"
-      style={{ paddingBottom: aspectRatio, width: imgWidth }}
-    >
+    <div className="contImg" style={{ width: imgWidth }}>
       <Loader data-test="loader" isVisible={!isLoaded} className="loader" />
       <img
         data-test="img"
